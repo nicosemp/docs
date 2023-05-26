@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CZENQ1ZPEH"></script>
 <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-CZENQ1ZPEH",{anonymize_ip:!0})</script><link rel="stylesheet" href="/zh/assets/css/styles.44bfac28.css">
-<link rel="preload" href="/zh/assets/js/runtime~main.898eb15b.js" as="script">
+<link rel="preload" href="/zh/assets/js/runtime~main.469869e4.js" as="script">
 <link rel="preload" href="/zh/assets/js/main.4b7966ef.js" as="script">
 </head>
 <body class="navigation-with-keyboard" data-theme="light">
@@ -95,7 +95,7 @@ extracted fragments of the syslog are rarely helpful as they do not show
 what lead up to a problem occurring.</p><p>Normally the logs are only written to RAM so do not survive the system
 being rebooted. If you are investigating a system crash then as long as
 you are running Unraid 6.7.2 or later there is built-in syslog server
-support</p><p><img loading="lazy" src="/zh/assets/images/Syslog-server-setup-a80b97d7a9b4847daa8323687f570e30.jpg" title="Syslog-server-setup.jpg" width="1100" height="285" class="img_ev3q">{width=&quot;200&quot;}</p><ul><li>Go to <em>Settings-<!-- -->&gt;<!-- -->Network Services-<!-- -->&gt;<!-- -->Syslog Server</em></li></ul><p>:   You can click on the &#x27;Help&#x27; icon on the Toolbar and get more
+support</p><p><img loading="lazy" src="/zh/assets/images/Syslog-server-setup-a80b97d7a9b4847daa8323687f570e30.jpg" title="Syslog-server-setup.jpg" width="1100" height="285" class="img_ev3q">{width=&quot;200&quot;}</p><ul><li>Go to <em>Settings-<!-- -->&gt;<!-- -->Network Services-<!-- -->&gt;<!-- -->Syslog Server</em></li></ul><p>: You can click on the &#x27;Help&#x27; icon on the Toolbar and get more
 information for all of the options.</p><ul><li><strong>Mirror to Flash</strong>: This is the simplest to set up. You select
 &#x27;Yes&#x27; from the dropdown box and click on the &#x27;Apply&#x27; button and
 the syslog will be mirrored to the logs folder/directory of the
@@ -103,7 +103,7 @@ flash drive and is appended to on a reboot. There is one principal
 disadvantage to this method. If the condition, that you are trying
 to troubleshoot, takes days to weeks to occur, it can do a lot of
 writes to the flash drive. Some folks are hesitant to use the flash
-drive in this manner as it may shorten the life of the flash drive.</li></ul><p>:   The advantage of this approach is that it captures everything from
+drive in this manner as it may shorten the life of the flash drive.</li></ul><p>: The advantage of this approach is that it captures everything from
 the start of the boot process which can be important if trying to
 diagnose boot problems.</p><ul><li><strong>Remote Syslog Server</strong>: This is used when you have another machine
 on your network that is acting as a syslog server. This can be
@@ -113,9 +113,9 @@ server <code>&lt;Operating system&gt;</code>{=html} After you have set up the
 computer/server, you fill in the computer/server name or the IP
 address. (I prefer to use the IP address as there is never any
 confusion about what it is.) Then click on the &#x27;Apply&#x27; button and
-your syslog will be mirrored to the other computer.</li></ul><p>:   The other computer has to be left on continuously until the problem
+your syslog will be mirrored to the other computer.</li></ul><p>: The other computer has to be left on continuously until the problem
 occurs.
-:   The events captured will only start with the point at which the
+: The events captured will only start with the point at which the
 syslog daemon is started during the boot process thus missing the
 very start of the boot process.</p><p><img loading="lazy" src="/zh/assets/images/Syslog-server-b166cf9ccef13716f0535c491ff164f2.jpg" title="Syslog-server.jpg" width="867" height="275" class="img_ev3q">{width=&quot;200&quot;}</p><ul><li><strong>Local Syslog Server</strong>: Set this to <strong>Enabled</strong> to setup this
 Unraid server to act as a network syslog server. When this is
@@ -127,7 +127,7 @@ disks due to the continuous writing of new lines to the syslog.
 A cache SSD drive would be the ideal choice here using a <em>cache
 preferred</em> share. The syslog will be in the root of that
 folder/share.)</li><li><strong>Local syslog rotation</strong>: These settings allow you to control
-how much space the syslog is allowed to use.<ul><li><strong>Local syslog maximum file size</strong>:</li><li><strong>Local syslog number of files</strong>:</li></ul></li></ul></li></ul><p>:   If you click the &#x27;Apply button at this point, you will have this
+how much space the syslog is allowed to use.<ul><li><strong>Local syslog maximum file size</strong>:</li><li><strong>Local syslog number of files</strong>:</li></ul></li></ul></li></ul><p>: If you click the &#x27;Apply button at this point, you will have this
 server setup to serve as a Remote Syslog Server. It can now capture
 syslogs from several computers if the need should arise.</p><ul><li><strong>Logging to file local to Unraid server</strong> Using a bit of trickery
 we can use the Unraid server with the problem as the Local syslog
@@ -166,7 +166,7 @@ motherboard&#x27;s User Manual to determine the correct way to do
 this.</li><li>The Unraid flash drive supports booting in Legacy mode (also
 sometimes known as CSM mode) for older BiOS&#x27;s and UEFI for more
 recent ones. Many recent BIOS&#x27;s support both modes.</li><li>If you want UEFI boot mode to be used then the EFI folder on the
-flash drive must not have trailing tilde (<!-- -->~<!-- -->) character.</li></ul></li><li><p><strong>Syslinux loader</strong>:</p><p>:   <img loading="lazy" alt="Boot Menu" src="/zh/assets/images/BootMenu-105fcf5bc771c0123d8f690d108dc260.jpg" title="Boot Menu" width="479" height="288" class="img_ev3q"></p><ul><li>The entries that appear on the boot menu are specified by the
+flash drive must not have trailing tilde (<!-- -->~<!-- -->) character.</li></ul></li><li><p><strong>Syslinux loader</strong>:</p><p>: <img loading="lazy" alt="Boot Menu" src="/zh/assets/images/BootMenu-105fcf5bc771c0123d8f690d108dc260.jpg" title="Boot Menu" width="479" height="288" class="img_ev3q"></p><ul><li>The entries that appear on the boot menu are specified by the
 <em>syslinux/syslinux.cfg</em> file on the flash drive. Although in
 theory this file can be edited manually as it a text file it is
 recommended that it is done via the GUI by clicking on the flash
@@ -188,11 +188,11 @@ detects the hardware environment.</li></ul></li><li><p><strong>Flash dependent s
 mounted at <em>/boot</em> so that the process can continue</p><ul><li>If the mount of the flash fails it is still possible to get the
 login prompt displayed. However, this does not necessarily mean
 the whole boot process completed correctly.</li><li>If this stage of the boot process has not completed then typical
-symptoms are that the webGUI and network are not started</li></ul><p>:   One way to see if this has happened is to login and use the
+symptoms are that the webGUI and network are not started</li></ul><p>: One way to see if this has happened is to login and use the
 <strong>df</strong> command. If the flash drive was mounted successfully then
 you will see it as /boot in the resulting list of mount points.
-:   The output should have something like following mount points:
-:   <code>/dev/sdb1 15413232 826976 14586256 6% /boot</code>\
+: The output should have something like following mount points:
+: <code>/dev/sdb1 15413232 826976 14586256 6% /boot</code>\
 <code>/dev/loop0 9344 9344 0 100% /lib/modules</code>\
 <code>/dev/loop1 7424 7424 0 100% /lib/firmware</code></p><ul><li>One reason the flash drive may fail to mount is that it is not
 labelled as <strong>UNRAID</strong> (all capitals).</li><li>Additional drivers and firmware are now available on the above
@@ -202,15 +202,15 @@ at this stage.</li><li>If one of the Safe Boot options was selected from the Unr
 Boot menu then the loading of plugins is suppressed.</li></ul></li><li><p><strong>Web GUI</strong>:</p><ul><li>The Unraid web GUI is started.</li><li>The webGUI is actually done via an entry in the <em>config/go</em> file
 on the flash drive so it is possible for user-supplied commands
 to also be run from there either before starting the webGUI or
-just after doing so.</li></ul></li><li><p><strong>Array</strong></p><p>:   If the user has set the array to be auto-mounted then the
+just after doing so.</li></ul></li><li><p><strong>Array</strong></p><p>: If the user has set the array to be auto-mounted then the
 following will start. If array auto-start is not set then they
-happen when the user elects to start the array.</p><ul><li><strong>Drives mounted</strong></li></ul><p>:   Mount points will now be created of the form <em>/dev/diskX</em> and
-<em>/mnt/cache</em> (if you have a cache).</p><ul><li><strong>File Share Services</strong></li></ul><p>:   Shares will now become available on the network.
-:   At the Linux level the shares will now appear as paths like
-<em>/mnt/user/sharename</em></p><ul><li><strong>Docker Containers</strong></li></ul><p>:   If the user has enabled the docker services then the Docker
+happen when the user elects to start the array.</p><ul><li><strong>Drives mounted</strong></li></ul><p>: Mount points will now be created of the form <em>/dev/diskX</em> and
+<em>/mnt/cache</em> (if you have a cache).</p><ul><li><strong>File Share Services</strong></li></ul><p>: Shares will now become available on the network.
+: At the Linux level the shares will now appear as paths like
+<em>/mnt/user/sharename</em></p><ul><li><strong>Docker Containers</strong></li></ul><p>: If the user has enabled the docker services then the Docker
 containers will be started using the order on the Docker tab.
-:   The order of the containers and delays between starting the
-containers can be set on the Docker tab.</p><ul><li><strong>VMs</strong></li></ul><p>:   Any VMs the user has set to auto-start will now be started</p></li></ol><p>By this stage, the Unraid server will be fully operational.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="boot-failures">Boot Failures<a href="#boot-failures" class="hash-link" aria-label="Boot Failures的直接链接" title="Boot Failures的直接链接">​</a></h3><p>The following are some actions that can be taken to try and pin down the
+: The order of the containers and delays between starting the
+containers can be set on the Docker tab.</p><ul><li><strong>VMs</strong></li></ul><p>: Any VMs the user has set to auto-start will now be started</p></li></ol><p>By this stage, the Unraid server will be fully operational.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="boot-failures">Boot Failures<a href="#boot-failures" class="hash-link" aria-label="Boot Failures的直接链接" title="Boot Failures的直接链接">​</a></h3><p>The following are some actions that can be taken to try and pin down the
 cause of a boot failure:</p><ol><li><strong>if possible use a USB2 port in preference to a USB3 one as they
 seem to be more reliable for booting purposes. In addition USB2
 drives also seem less prone to failure than USB3 ones. Many modern
@@ -239,12 +239,12 @@ Unraid webGUI or console. This may be that they simply forgot the
 password, but corruption of the flash drive can also result in the
 password not being recognized.</p><p><em>Passwords for shares can be changed/reset from the Unraid webGUI.</em></p><p>To reset the management password use the following process:</p><ol><li><p>Shutdown server and then plug the USB boot flash device into a PC or
 Mac</p></li><li><p>While there it is a good idea to run a check on the flash drive and
-make a backup of its contents</p></li><li><p>Delete these files:</p><p>:   config/passwd
-:   config/shadow
-:   config/smbpasswd</p></li><li><p>Plug the flash back into the server and start up again.</p></li></ol><p>Note that this will reset <strong>all</strong> user passwords including &#x27;root&#x27; user
+make a backup of its contents</p></li><li><p>Delete these files:</p><p>: config/passwd
+: config/shadow
+: config/smbpasswd</p></li><li><p>Plug the flash back into the server and start up again.</p></li></ol><p>Note that this will reset <strong>all</strong> user passwords including &#x27;root&#x27; user
 to null (blank).</p><p>There is an alternative procedure that can be used for just resetting
-the root password (but is a little more prone to error):</p><ol><li><p>Plug the USB drive into another computer</p></li><li><p>Bing up an editor (such as Notepad++) on the following file:</p><p>:   /boot/config/shadow</p></li><li><p>On the first line you should see something such as:</p><p>:   root:\$&amp;\$&amp;%<!-- -->*<!-- -->1112233484847648DHD\$%.:15477:0:99999:7:::</p></li><li><p>Change that line to the following (essentially delete the content
-between the first and second colons):</p><p>:   root::15477:0:99999:7:::</p></li><li><p>Plug flash back into server and start up again.</p></li></ol><h3 class="anchor anchorWithStickyNavbar_LWe7" id="lost-boot-drive-and-do-not-know-which-are-the-parity-drives">Lost boot drive and do not know which are the parity drives<a href="#lost-boot-drive-and-do-not-know-which-are-the-parity-drives" class="hash-link" aria-label="Lost boot drive and do not know which are the parity drives的直接链接" title="Lost boot drive and do not know which are the parity drives的直接链接">​</a></h3><p>Occasionally users get the scenario where they have the following
+the root password (but is a little more prone to error):</p><ol><li><p>Plug the USB drive into another computer</p></li><li><p>Bing up an editor (such as Notepad++) on the following file:</p><p>: /boot/config/shadow</p></li><li><p>On the first line you should see something such as:</p><p>: root:\$&amp;\$&amp;%<!-- -->*<!-- -->1112233484847648DHD\$%.:15477:0:99999:7:::</p></li><li><p>Change that line to the following (essentially delete the content
+between the first and second colons):</p><p>: root::15477:0:99999:7:::</p></li><li><p>Plug flash back into server and start up again.</p></li></ol><h3 class="anchor anchorWithStickyNavbar_LWe7" id="lost-boot-drive-and-do-not-know-which-are-the-parity-drives">Lost boot drive and do not know which are the parity drives<a href="#lost-boot-drive-and-do-not-know-which-are-the-parity-drives" class="hash-link" aria-label="Lost boot drive and do not know which are the parity drives的直接链接" title="Lost boot drive and do not know which are the parity drives的直接链接">​</a></h3><p>Occasionally users get the scenario where they have the following
 combination of circumstances:</p><ul><li>Unraid boot drive has failed</li><li>There is no recent backup of the boot drive that can be used to
 restore the drive configuration</li><li>There is uncertainty about which drives are the parity drives.</li></ul><p>The issue is how to get the Unraid system operational again on a new
 boot drive without data loss. You can exploit the fact that Unraid will
@@ -348,8 +348,8 @@ VM Manager is not long enough.  If the VM Manager timer setting is
 exceeded on a shutdown, your VMs will be forced to shutdown.  This
 is just like pulling the plug on a PC. A reasonable value is
 something like 300 seconds (5 minutes) in order to insure your
-Windows 10 VMs have time to completely shutdown.</li><li>There is a timer for stopping Docker Containers under <strong>*Settings
--<!-- -->&gt;<!-- --> Docker</strong> (in advanced view).* If this timeout is reached then
+Windows 10 VMs have time to completely shutdown.</li><li>There is a timer for stopping Docker Containers under <strong>*<!-- -->Settings
+-<!-- -->&gt;<!-- --> Docker</strong> (in advanced view).<!-- -->*<!-- --> If this timeout is reached then
 docker containers still running will be Force Stopped.</li><li>If you have remote SMB or NFS mounts in Unassigned Devices you need
 to account for time for them to time out if the remote server has
 gone off-line when unmounting.  You should allow something like 45
@@ -371,7 +371,7 @@ time-out&quot; was exceeded, Unraid will attempt to write diagnostics to the
 <strong>/log</strong> folder on the flash drive.  When you ask for help in the Unraid
 forums with an unclean shutdown, post the <strong>/log/diagnostics.zip</strong> file.
  There is information in the log that shows why the unclean shutdown
-occurred.</p><p>It can also be good idea to activate the *Settings-<!-- -->&gt;<strong>*Syslog Server</strong>
+occurred.</p><p>It can also be good idea to activate the <!-- -->*<!-- -->Settings-<!-- -->&gt;<strong>*<!-- -->Syslog Server</strong>
 to get logs that can survive a reboot as by default the syslog is only
 in RAM and lost after a reboot.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="crash-issues">Crash Issues<a href="#crash-issues" class="hash-link" aria-label="Crash Issues的直接链接" title="Crash Issues的直接链接">​</a></h2><p><em>THIS SECTION IS STILL UNDER CONSTRUCTION</em></p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="ram-issues">RAM Issues<a href="#ram-issues" class="hash-link" aria-label="RAM Issues的直接链接" title="RAM Issues的直接链接">​</a></h3><p>It is not unknown for RAM to degrade over time. RAM issues can be
 elusive to track down and cause unpredictable errors. A not uncommon
@@ -523,7 +523,7 @@ are case-significant.</li></ul><p>If you cannot spot the error then you can try:
 will highlight the problem docker container(s) so you now know where
 to look.</li></ul><p>If that is not enough to identify the culprit then:</p><ul><li>Make sure all containers are stopped and not set to auto-start</li><li>Stop docker service</li><li>delete current docker image and set a more reasonable size (e.g.
 20G)</li><li>Start docker service</li><li>Use Apps <!-- -->&gt;<!-- -->&gt;<!-- -->&gt;<!-- --> Previous apps to re-install your containers (with
-all their settings intact).</li><li>Go to docker tab and click the Container size button</li></ul><p>:   This will give you a starting point for the space each container is
+all their settings intact).</li><li>Go to docker tab and click the Container size button</li></ul><p>: This will give you a starting point for the space each container is
 using.</p><ul><li>Enable one container, let it run for a short while, and then press
 the Container size button again to see if that particular container
 is consuming space when it runs.</li><li>Repeat the above step until you track down the rogue container(s)</li></ul><h3 class="anchor anchorWithStickyNavbar_LWe7" id="how-do-i-move-dockerimg">How do I move docker.img?<a href="#how-do-i-move-dockerimg" class="hash-link" aria-label="How do I move docker.img?的直接链接" title="How do I move docker.img?的直接链接">​</a></h3><p>The normal reason for wanting to move the <em>docker.img</em> file is because
@@ -616,8 +616,8 @@ the top level folders on all drives this means that suddenly the file(s)
 in question can end up on a drive that has the <em>Use Cache=No</em> setting.
 Since <em>mover</em> ignores shares with the <em>Use Cache</em> setting of <em>No</em> or
 <em>Only</em> this will result in the files being left stranded on a pool that
-the target share has not been configured to use for caching purposes.</p><p><strong>*This behaviour can also occur if you try and move files between two
-User Shares that are set to use different Pools for caching purposes</strong>.*
+the target share has not been configured to use for caching purposes.</p><p><strong>*<!-- -->This behaviour can also occur if you try and move files between two
+User Shares that are set to use different Pools for caching purposes</strong>.<!-- -->*<!-- -->
 Once again this can result in the files ending up on the wrong pool.</p><p>Workarounds to this issue are by doing any of the following:</p><ul><li>Manually move the file(s) in question to the drive where you want it
 to be finally located.</li><li>Set the share that the file has ended up in to have the <em>Use
 Cache=Yes</em> setting and then when mover runs the file will get
@@ -629,7 +629,7 @@ as <em>Yes</em> or change it to the setting you want to use long term.</li><li>D
 User Share will never appear to be on the same mount point so a
 copy + delete is done automatically.</li><li>Make sure the mount points for source and target appear to be
 different at the Linux level.</li><li>Move between physical drives rather than at the User Share level.</li></ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="theme-doc-footer-edit-meta-row row"><div class="col"><a href="https://github.com/unraid/docs/tree/main/docs/unraid-os/manual/troubleshooting.md" target="_blank" rel="noreferrer noopener" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>编辑此页</a></div><div class="col lastUpdated_vwxv"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="文件选项卡"><a class="pagination-nav__link pagination-nav__link--prev" href="/zh/unraid-os/manual/multi-language"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">Multi-Language Support</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/zh/unraid-os/manual/additional-settings"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">Additional Settings</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#capturing-diagnostic-information" class="table-of-contents__link toc-highlight">Capturing Diagnostic Information</a><ul><li><a href="#system-diagnostics" class="table-of-contents__link toc-highlight">System Diagnostics</a></li><li><a href="#persistent-logs-syslog-server" class="table-of-contents__link toc-highlight">Persistent Logs (Syslog server)</a></li></ul></li><li><a href="#boot-issues" class="table-of-contents__link toc-highlight">Boot Issues</a><ul><li><a href="#preparing-the-flash-drive" class="table-of-contents__link toc-highlight">Preparing the flash drive</a></li><li><a href="#enabling-uefi-boot" class="table-of-contents__link toc-highlight">Enabling UEFI boot</a></li><li><a href="#boot-process" class="table-of-contents__link toc-highlight">Boot Process</a></li><li><a href="#boot-failures" class="table-of-contents__link toc-highlight">Boot Failures</a></li><li><a href="#lost-root-password" class="table-of-contents__link toc-highlight">Lost root Password</a></li><li><a href="#lost-boot-drive-and-do-not-know-which-are-the-parity-drives" class="table-of-contents__link toc-highlight">Lost boot drive and do not know which are the parity drives</a></li><li><a href="#backing-up-boot-drive" class="table-of-contents__link toc-highlight">Backing Up Boot Drive</a></li><li><a href="#manually-upgrading-or-downgrading-an-unraid-release" class="table-of-contents__link toc-highlight">Manually Upgrading (or Downgrading) an Unraid release.</a></li><li><a href="#bzimage-checksum-errorfailure-reading-flash-drive" class="table-of-contents__link toc-highlight">Bzimage checksum error/failure reading flash drive</a></li></ul></li><li><a href="#unclean-shutdowns" class="table-of-contents__link toc-highlight">Unclean Shutdowns</a></li><li><a href="#crash-issues" class="table-of-contents__link toc-highlight">Crash Issues</a><ul><li><a href="#ram-issues" class="table-of-contents__link toc-highlight">RAM Issues</a></li><li><a href="#over-clocking-ram" class="table-of-contents__link toc-highlight">Over-clocking RAM</a></li></ul></li><li><a href="#windows-connection-issues" class="table-of-contents__link toc-highlight">Windows Connection Issues</a><ul><li><a href="#name-resolution" class="table-of-contents__link toc-highlight">Name Resolution</a></li><li><a href="#stored-credentials" class="table-of-contents__link toc-highlight">Stored Credentials</a></li><li><a href="#multiple-sign-ons" class="table-of-contents__link toc-highlight">Multiple Sign-ons</a></li></ul></li><li><a href="#data-recovery" class="table-of-contents__link toc-highlight">Data Recovery</a><ul><li><a href="#unmountable-disks" class="table-of-contents__link toc-highlight">Unmountable Disk(s)</a></li><li><a href="#lost-array-configuration" class="table-of-contents__link toc-highlight">Lost Array Configuration</a></li><li><a href="#using-ddrescue-to-recover-data-from-a-failing-disk" class="table-of-contents__link toc-highlight">Using <em>ddrescue</em> to recover data from a failing disk</a></li></ul></li><li><a href="#docker" class="table-of-contents__link toc-highlight">Docker</a><ul><li><a href="#docker-image-full" class="table-of-contents__link toc-highlight">Docker Image Full</a></li><li><a href="#how-do-i-move-dockerimg" class="table-of-contents__link toc-highlight">How do I move docker.img?</a></li><li><a href="#how-do-i-recreate-dockerimg" class="table-of-contents__link toc-highlight">How do I recreate docker.img?</a></li><li><a href="#restoring-your-docker-applications" class="table-of-contents__link toc-highlight">Restoring your Docker Applications</a></li><li><a href="#further-information" class="table-of-contents__link toc-highlight">Further Information</a></li></ul></li><li><a href="#udma-crc-errors" class="table-of-contents__link toc-highlight">UDMA CRC Errors</a></li><li><a href="#cachepool-issues" class="table-of-contents__link toc-highlight">Cache/Pool issues</a><ul><li><a href="#mover-is-not-moving-files" class="table-of-contents__link toc-highlight">Mover is not moving files</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Documentation</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/zh/">Home</a></li><li class="footer__item"><a href="https://github.com/unraid/docs" target="_blank" rel="noopener noreferrer" class="footer__link-item">Contribute on Github<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://forums.unraid.net" target="_blank" rel="noopener noreferrer" class="footer__link-item">Forums<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/unraid" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://unraid.net" target="_blank" rel="noopener noreferrer" class="footer__link-item">Unraid Home<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://connect.myunraid.net" target="_blank" rel="noopener noreferrer" class="footer__link-item">Unraid Connect<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://newsletter.unraid.net" target="_blank" rel="noopener noreferrer" class="footer__link-item">Newsletter<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://unraid.net/blog" target="_blank" rel="noopener noreferrer" class="footer__link-item">Blog<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="margin-bottom--sm"><img src="/zh/img/un-mark-gradient.svg" alt="Unraid Logo" class="themedImage_ToTc themedImage--light_HNdA footer__logo" width="100"><img src="/zh/img/un-mark-gradient.svg" alt="Unraid Logo" class="themedImage_ToTc themedImage--dark_i4oU footer__logo" width="100"></div><div class="footer__copyright"><small>Copyright &copy; 2005-2023 Lime Technology, Inc.<br>Unraid&reg; is a registered trademark of Lime Technology, Inc.</small></div></div></div></footer></div>
-<script src="/zh/assets/js/runtime~main.898eb15b.js"></script>
+<script src="/zh/assets/js/runtime~main.469869e4.js"></script>
 <script src="/zh/assets/js/main.4b7966ef.js"></script>
 </body>
 </html>
